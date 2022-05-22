@@ -1,0 +1,104 @@
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+
+% Use upquote if available, for straight quotes in verbatim environments
+\usepackage{upquote}
+\usepackage[]{microtype}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage{hyperref}
+\hypersetup{%
+  pdftitle={Unsupervised Learning},
+  pdfauthor={Martin Mihle Nygaard},
+  pdflang={en-GB},
+  colorlinks,
+  pdfcreator={LaTeX}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{graphicx}
+\usepackage[top=2cm,
+            bottom=3cm,
+            left=2cm,
+            right=6.5cm,
+            marginparwidth=4cm,
+            marginparsep=1cm]{geometry}
+
+\usepackage{titlesec}
+\titleformat{\subsubsection}[runin]{\itshape}{\thesubsubsection}{0pt}{}[.]
+%\titlespacing{\subsection}   {0pt}{1\baselineskip}{0.5em}
+\titlespacing{\subsubsection}{0pt}{.5\baselineskip}{1ex}
+\titlespacing{\paragraph}    {0pt}{.5\baselineskip}{1ex}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{lipsum}
+\usepackage[skip=.5\baselineskip]{parskip}
+\frenchspacing % removes double spaced sentences
+\usepackage{csquotes}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,
+        keepspaces=true,
+        columns=fullflexible,
+        xleftmargin=2em,
+        xrightmargin=0em,
+        language=Python,
+        consecutivenumbers=false,
+        numbers=left,
+        numberstyle=\ttfamily\small\color{gray},
+        numbersep=1em}
+        %keywordstyle=\bfseries}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{cancel}
+\usepackage{xfrac}
+
+\usepackage{marginnote}
+\usepackage[ragged,symbol,flushmargin]{footmisc}
+\renewcommand\marginfont{%
+    \normalfont\raggedright\scriptsize\itshape
+}
+%\renewcommand\footnotelayout{%
+%    \normalfont\raggedright\scriptsize\itshape
+%}
+%\makeatletter
+%\def\@maketitle{%
+%  \newpage
+%  \null
+%  \vskip 2em%
+%    {\LARGE \@title \par}%
+%    % \vskip 1.5em%
+%    {\large \itshape
+%      \lineskip .5em%
+%        \@author
+%      \par}%
+%  \vskip 2.5em}
+%\makeatother
+
+% LANGUAGE
+
+\ifXeTeX
+  \usepackage{polyglossia}
+  \setmainlanguage[variant=british]{english}
+\else
+  \usepackage[main=british]{babel}
+\fi
+
+% CITATIONS
+
+\usepackage[style=authoryear-ibid]{biblatex}
+\addbibresource{citations.bib}
+
+\usepackage{etoolbox}
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+
+% No date. Fill inn manually.
+\date{}
